@@ -1,22 +1,53 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Curated with Courtney</title>
+    <meta
+      name="description"
+      content="Party planning for gatherings that are meant to feel easy."
+    />
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://curatedwithcourtney.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Curated with Courtney" />
+    <meta
+      property="og:description"
+      content="Party planning for gatherings that are meant to feel easy."
+    />
+    <meta
+      property="og:image"
+      content="https://curatedwithcourtney.com/og.png"
+    />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="curatedwithcourtney.com" />
+    <meta property="twitter:url" content="https://curatedwithcourtney.com" />
+    <meta name="twitter:title" content="Curated with Courtney" />
+    <meta
+      name="twitter:description"
+      content="Party planning for gatherings that are meant to feel easy."
+    />
+    <meta
+      name="twitter:image"
+      content="https://curatedwithcourtney.com/og.png"
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>
