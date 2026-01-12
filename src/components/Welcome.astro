@@ -1,8 +1,9 @@
 ---
 import { Button } from "@/components/ui/button";
+import { subhead } from "@/constants";
 ---
 
-<section class="mt-24 p-4 max-w-6xl mx-auto flex flex-col gap-6 md:mt-32">
+<section class="mt-16 p-4 max-w-6xl mx-auto flex flex-col gap-6 md:mt-32">
   <header class="text-center">
     <span
       class="mx-auto select-none text-sm flex items-center gap-1 justify-center max-w-fit bg-neutral-800/5 px-4 rounded-2xl py-1"
@@ -14,11 +15,10 @@ import { Button } from "@/components/ui/button";
     <h1
       class="text-2xl font-semibold max-w-3xl mx-auto mt-4 md:text-4xl lg:text-5xl"
     >
-      Party planning for gatherings that are meant to feel easy.
+      I plan the party, so you get to <em>enjoy</em> it, not manage it.
     </h1>
-    <p class="mt-2 max-w-xs mx-auto sm:max-w-md md:text-xl lg:max-w-lg">
-      For birthdays, dinners, intimate celebrations, and small company events
-      that don't feel corporate.
+    <p class="mt-2 max-w-xs mx-auto sm:max-w-md md:text-xl lg:max-w-lg md:mt-4">
+      {subhead}
     </p>
 
     <div class="flex flex-col items-center mt-8">
@@ -45,10 +45,10 @@ import { Button } from "@/components/ui/button";
   @keyframes pulse-ring {
     0% {
       transform: scale(1);
-      opacity: 0.6;
+      opacity: 0.8;
     }
     70% {
-      transform: scale(3);
+      transform: scale(2.5);
       opacity: 0;
     }
     100% {

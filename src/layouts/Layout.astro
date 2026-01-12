@@ -1,5 +1,6 @@
 ---
 import { Button } from "@/components/ui/button";
+import { subhead } from "@/constants.ts";
 ---
 
 <!doctype html>
@@ -10,19 +11,13 @@ import { Button } from "@/components/ui/button";
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
     <title>Curated with Courtney</title>
-    <meta
-      name="description"
-      content="Party planning for gatherings that are meant to feel easy."
-    />
+    <meta name="description" content={subhead} />
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://curatedwithcourtney.com" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Curated with Courtney" />
-    <meta
-      property="og:description"
-      content="Party planning for gatherings that are meant to feel easy."
-    />
+    <meta property="og:description" content={subhead} />
     <meta
       property="og:image"
       content="https://curatedwithcourtney.com/og.png"
@@ -36,10 +31,7 @@ import { Button } from "@/components/ui/button";
     <meta property="twitter:domain" content="curatedwithcourtney.com" />
     <meta property="twitter:url" content="https://curatedwithcourtney.com" />
     <meta name="twitter:title" content="Curated with Courtney" />
-    <meta
-      name="twitter:description"
-      content="Party planning for gatherings that are meant to feel easy."
-    />
+    <meta name="twitter:description" content={subhead} />
     <meta
       name="twitter:image"
       content="https://curatedwithcourtney.com/og.png"
@@ -47,7 +39,7 @@ import { Button } from "@/components/ui/button";
   </head>
   <body>
     <nav
-      class="max-w-7xl mx-auto px-4 py-3 fixed w-full top-0 flex items-center justify-between backdrop-blur-2xl"
+      class="max-w-7xl mx-auto px-4 py-3 sticky top-0 flex items-center justify-between bg-background"
     >
       <a href="/" class="font-bold sm:text-lg">Curated with Courtney</a>
       <Button client:load size="sm">Let's chat!</Button>
