@@ -1,0 +1,45 @@
+---
+import { Item, ItemContent, ItemMedia, ItemTitle } from "@/components/ui/item";
+import { PartyPopper, UtensilsCrossed, Calendar, Users } from "lucide-react";
+---
+
+<section class="max-w-3xl mx-auto my-28 px-4 md:my-32">
+  <h2 class="text-xl text-center font-semibold md:text-2xl">
+    The kinds of events I plan
+  </h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 mt-4 gap-4 items-stretch md:mt-8">
+    <Item variant="outline" size="sm">
+      <ItemMedia>
+        <PartyPopper className="size-5" />
+      </ItemMedia>
+      <ItemContent>
+        <ItemTitle>Birthday parties and milestones</ItemTitle>
+      </ItemContent>
+    </Item>
+    <Item variant="outline" size="sm">
+      <ItemMedia>
+        <UtensilsCrossed className="size-5" />
+      </ItemMedia>
+      <ItemContent>
+        <ItemTitle>Dinner parties and at-home gatherings</ItemTitle>
+      </ItemContent>
+    </Item>
+    <Item variant="outline" size="sm">
+      <ItemMedia>
+        <Calendar className="size-5" />
+      </ItemMedia>
+      <ItemContent>
+        <ItemTitle>Holiday and seasonal celebrations</ItemTitle>
+      </ItemContent>
+    </Item>
+    <Item variant="outline" size="sm">
+      <ItemMedia>
+        <Users className="size-5" />
+      </ItemMedia>
+      <ItemContent>
+        <ItemTitle>Intimate company dinners and small team events</ItemTitle>
+      </ItemContent>
+    </Item>
+  </div>
+</section>
