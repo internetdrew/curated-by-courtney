@@ -1,12 +1,13 @@
 ---
 import { Button } from "@/components/ui/button";
 import { subhead } from "@/constants";
+import "@fontsource-variable/geist-mono";
 ---
 
 <section class="mt-16 p-4 max-w-6xl mx-auto flex flex-col gap-6 md:mt-32">
   <header class="text-center">
     <span
-      class="mx-auto select-none text-sm flex items-center gap-1 justify-center max-w-fit bg-neutral-800/5 px-4 rounded-2xl py-1"
+      class="mx-auto font-medium select-none text-sm flex items-center gap-1 justify-center max-w-fit bg-neutral-800/5 px-4 rounded-2xl py-1"
     >
       <span class="w-2 h-2 rounded-full pulse bg-green-500 inline-block"></span>
       Available for new events
@@ -15,13 +16,13 @@ import { subhead } from "@/constants";
     <h1
       class="text-2xl font-semibold max-w-3xl mx-auto mt-4 md:text-4xl lg:text-5xl"
     >
-      I plan the party, so you get to <em>enjoy</em> it, not manage it.
+      I'll plan the party, so you get to <em>enjoy</em> it, not manage it.
     </h1>
     <p class="mt-2 max-w-xs mx-auto sm:max-w-md md:text-xl lg:max-w-lg md:mt-4">
       {subhead}
     </p>
 
-    <div class="flex flex-col items-center mt-8">
+    <div class="flex flex-col items-center mt-4">
       <Button>Let's plan your party</Button>
     </div>
   </header>

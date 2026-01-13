@@ -39,12 +39,12 @@ import { subhead } from "@/constants.ts";
   </head>
   <body>
     <nav
-      class="max-w-7xl mx-auto px-4 py-3 sticky top-0 flex items-center justify-between bg-background"
+      class="max-w-6xl mx-auto px-4 py-3 sticky top-0 flex items-center justify-between bg-background/80 backdrop-blur-md z-50"
     >
       <a href="/" class="font-bold sm:text-lg">Curated with Courtney</a>
       <Button client:load size="sm">Let's chat!</Button>
     </nav>
-    <main>
+    <main class="relative">
       <slot />
     </main>
   </body>
