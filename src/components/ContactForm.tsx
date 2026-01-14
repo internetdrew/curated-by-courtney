@@ -26,17 +26,35 @@ import {
   InputGroupTextarea,
 } from "./ui/input-group";
 
+const inputThresholds = {
+  name: { min: 1, max: 50 },
+  eventType: { min: 1, max: 50 },
+  message: { min: 10, max: 1500 },
+};
+
 const formSchema = z.object({
   name: z
     .string()
-    .min(1, "Name must be at least 1 character.")
-    .max(50, "Name must be at most 50 characters."),
+    .min(inputThresholds.name.min, "Please enter your name.")
+    .max(inputThresholds.name.max, "Name must be at most 50 characters."),
   email: z.string().email("Please enter a valid email address."),
-  eventType: z.string().min(1, "Please tell me what type of event this is."),
+  eventType: z
+    .string()
+    .min(
+      inputThresholds.eventType.min,
+      "Please tell me what type of event this is.",
+    )
+    .max(
+      inputThresholds.eventType.max,
+      `Event type must be at most ${inputThresholds.eventType.max} characters long.`,
+    ),
   message: z
     .string()
-    .min(10, "Message must be at least 10 characters.")
-    .max(1500, "Message must be at most 1500 characters."),
+    .min(inputThresholds.message.min, "Message must be at least 10 characters.")
+    .max(
+      inputThresholds.message.max,
+      `Message must be at most ${inputThresholds.message.max} characters long.`,
+    ),
 });
 
 const ContactForm = () => {
@@ -71,11 +89,12 @@ const ContactForm = () => {
               control={form.control}
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
-                  <FieldLabel htmlFor="name">Your Name</FieldLabel>
+                  <FieldLabel htmlFor="name">What's your name?</FieldLabel>
                   <Input
                     {...field}
                     id="name"
                     aria-invalid={fieldState.invalid}
+                    placeholder="Jane Smith"
                     autoComplete="off"
                   />
                   {fieldState.invalid && (
@@ -89,27 +108,74 @@ const ContactForm = () => {
               control={form.control}
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
-                  <FieldLabel htmlFor="form-rhf-demo-description">
-                    Description
+                  <FieldLabel htmlFor="email">
+                    What's your email address?
+                  </FieldLabel>
+                  <Input
+                    {...field}
+                    id="email"
+                    aria-invalid={fieldState.invalid}
+                    placeholder="jane@example.com"
+                    autoComplete="off"
+                  />
+                  {fieldState.invalid && (
+                    <FieldError errors={[fieldState.error]} />
+                  )}
+                </Field>
+              )}
+            />
+            <Controller
+              name="eventType"
+              control={form.control}
+              render={({ field, fieldState }) => (
+                <Field data-invalid={fieldState.invalid}>
+                  <FieldLabel htmlFor="eventType">
+                    What kind of gathering are you planning?
+                  </FieldLabel>
+                  <Input
+                    {...field}
+                    id="eventType"
+                    aria-invalid={fieldState.invalid}
+                    placeholder="Birthday party, dinner, team event..."
+                    autoComplete="off"
+                  />
+                  {fieldState.invalid && (
+                    <FieldError errors={[fieldState.error]} />
+                  )}
+                </Field>
+              )}
+            />
+            <Controller
+              name="message"
+              control={form.control}
+              render={({ field, fieldState }) => (
+                <Field data-invalid={fieldState.invalid}>
+                  <FieldLabel htmlFor="message">
+                    Tell me about your event!
                   </FieldLabel>
                   <InputGroup>
                     <InputGroupTextarea
                       {...field}
-                      id="form-rhf-demo-description"
-                      placeholder="I'm having an issue with the login button on mobile."
+                      id="message"
+                      placeholder="Guest count, date, location, any ideas you have in mind..."
                       rows={6}
                       className="min-h-24 resize-none"
                       aria-invalid={fieldState.invalid}
                     />
                     <InputGroupAddon align="block-end">
-                      <InputGroupText className="tabular-nums">
-                        {field.value.length}/100 characters
+                      <InputGroupText
+                        className={`tabular-nums text-xs ml-auto ${field.value.length > inputThresholds.message.max ? "text-red-600 dark:text-red-400" : ""}`}
+                      >
+                        {inputThresholds.message.max - field.value.length}{" "}
+                        characters{" "}
+                        {field.value.length > inputThresholds.message.max
+                          ? "over the limit"
+                          : "remaining"}
                       </InputGroupText>
                     </InputGroupAddon>
                   </InputGroup>
                   <FieldDescription>
-                    Include steps to reproduce, expected behavior, and what
-                    actually happened.
+                    Include any details or questions you have about your event.
                   </FieldDescription>
                   {fieldState.invalid && (
                     <FieldError errors={[fieldState.error]} />
