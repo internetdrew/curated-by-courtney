@@ -74,11 +74,11 @@ const ContactForm = () => {
   }
 
   return (
-    <Card className="w-full sm:max-w-md">
+    <Card className="w-full bg-[#ffddd2] border-[#e29578] sm:max-w-md">
       <CardHeader>
-        <CardTitle>Let's Chat</CardTitle>
+        <CardTitle>Let's chat</CardTitle>
         <CardDescription>
-          Help us improve by reporting bugs you encounter.
+          Tell me all about the event you plan on hosting and how I can help.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -96,6 +96,7 @@ const ContactForm = () => {
                     aria-invalid={fieldState.invalid}
                     placeholder="Jane Smith"
                     autoComplete="off"
+                    className="border-[#e29578] bg-white"
                   />
                   {fieldState.invalid && (
                     <FieldError errors={[fieldState.error]} />
@@ -117,6 +118,7 @@ const ContactForm = () => {
                     aria-invalid={fieldState.invalid}
                     placeholder="jane@example.com"
                     autoComplete="off"
+                    className="border-[#e29578] bg-white"
                   />
                   {fieldState.invalid && (
                     <FieldError errors={[fieldState.error]} />
@@ -138,6 +140,7 @@ const ContactForm = () => {
                     aria-invalid={fieldState.invalid}
                     placeholder="Birthday party, dinner, team event..."
                     autoComplete="off"
+                    className="border-[#e29578] bg-white"
                   />
                   {fieldState.invalid && (
                     <FieldError errors={[fieldState.error]} />
@@ -153,7 +156,7 @@ const ContactForm = () => {
                   <FieldLabel htmlFor="message">
                     Tell me about your event!
                   </FieldLabel>
-                  <InputGroup>
+                  <InputGroup className="border-[#e29578] bg-white">
                     <InputGroupTextarea
                       {...field}
                       id="message"
@@ -188,7 +191,11 @@ const ContactForm = () => {
       </CardContent>
       <CardFooter>
         <Field orientation="horizontal">
-          <Button type="submit" form="form-rhf-demo" className="ml-auto">
+          <Button
+            type="submit"
+            form="form-rhf-demo"
+            className="ml-auto bg-[#006d77] hover:bg-[#006d77]/90"
+          >
             Submit
           </Button>
         </Field>
