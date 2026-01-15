@@ -1,11 +1,13 @@
 @import "tailwindcss";
 @import "@fontsource-variable/inter";
 @import "tw-animate-css";
+@import "@fontsource/poppins";
+@import "@fontsource-variable/roboto";
 
 @custom-variant dark (&:is(.dark *));
 
 body {
-  font-family: "Inter Variable", sans-serif;
+  font-family: "Roboto Variable", sans-serif;
 }
 
 @theme inline {
