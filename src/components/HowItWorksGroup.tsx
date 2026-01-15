@@ -27,11 +27,12 @@ export const HowItWorksGroup = () => {
     <ItemGroup className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 md:mt-8 ">
       <Item
         variant="outline"
+        className="bg-[#83c5be]/60 border-[#006d77]"
         onMouseEnter={() => vibrateRef.current?.startAnimation()}
         onMouseLeave={() => vibrateRef.current?.stopAnimation()}
       >
         <ItemMedia>
-          <VibrateIcon ref={vibrateRef} />
+          <VibrateIcon size={23} ref={vibrateRef} className="text-[#006d77]" />
         </ItemMedia>
         <ItemContent>
           <ItemTitle>Start with a conversation</ItemTitle>
@@ -43,11 +44,16 @@ export const HowItWorksGroup = () => {
       </Item>
       <Item
         variant="outline"
+        className="bg-[#83c5be]/60 border-[#006d77]"
         onMouseEnter={() => handshakeRef.current?.startAnimation()}
         onMouseLeave={() => handshakeRef.current?.stopAnimation()}
       >
         <ItemMedia>
-          <HeartHandshakeIcon ref={handshakeRef} />
+          <HeartHandshakeIcon
+            size={23}
+            ref={handshakeRef}
+            className="text-[#006d77]"
+          />
         </ItemMedia>
         <ItemContent>
           <ItemTitle>I handle the details</ItemTitle>
@@ -59,11 +65,16 @@ export const HowItWorksGroup = () => {
       </Item>
       <Item
         variant="outline"
+        className="bg-[#83c5be]/60 border-[#006d77]"
         onMouseEnter={() => handMetalRef.current?.startAnimation()}
         onMouseLeave={() => handMetalRef.current?.stopAnimation()}
       >
         <ItemMedia>
-          <HandMetalIcon size={24} ref={handMetalRef} />
+          <HandMetalIcon
+            size={22}
+            ref={handMetalRef}
+            className="text-[#006d77]"
+          />
         </ItemMedia>
 
         <ItemContent>
