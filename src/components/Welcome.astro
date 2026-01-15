@@ -1,17 +1,17 @@
 ---
 import { Button } from "@/components/ui/button";
 import { subhead } from "@/constants";
-import "@fontsource-variable/geist-mono";
+import "@fontsource-variable/merriweather";
 ---
 
 <section class="mt-16 p-4 max-w-6xl mx-auto flex flex-col gap-6 md:mt-32">
   <header class="text-center">
-    <span
+    <!-- <span
       class="mx-auto font-medium select-none text-sm flex items-center gap-1 justify-center max-w-fit bg-neutral-800/5 px-4 rounded-2xl py-1"
     >
       <span class="w-2 h-2 rounded-full pulse bg-green-500 inline-block"></span>
       Boston-based, available for local events
-    </span>
+    </span> -->
 
     <h1
       class="text-2xl font-semibold max-w-3xl mx-auto mt-4 md:text-4xl lg:text-5xl"
@@ -25,7 +25,7 @@ import "@fontsource-variable/geist-mono";
     <div class="flex flex-col items-center mt-4">
       <a
         href="#contact"
-        class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 has-[>svg]:px-3"
+        class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-[#006d77] text-primary-foreground hover:bg-[#006d77]/90 h-9 px-4 py-2 has-[>svg]:px-3"
         >Let's chat</a
       >
     </div>
@@ -33,6 +33,11 @@ import "@fontsource-variable/geist-mono";
 </section>
 
 <style>
+  h1,
+  p {
+    font-family: "Merriweather Variable", serif;
+  }
+
   .pulse {
     position: relative;
   }
